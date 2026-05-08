@@ -81,6 +81,6 @@ fun checkCorners(array2d : Array<Array<String>>){
         if (array2d[1][array2d.lastIndex] == "X") firstLastCorner++
         if (array2d[1][array2d.lastIndex - 1] =="X") firstLastCorner++
         if (firstLastCorner > 0 )array2d.first()[array2d.lastIndex] = "$firstLastCorner"
-        br
+        break
     }
 }
