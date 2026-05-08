@@ -70,7 +70,7 @@ fun checkCorners(array2d : Array<Array<String>>){
     // Last First Corner of Grid
     while (array2d.last()[0] != "X"){
         if (array2d.last()[1] == "X") lastFirstCorner++
-        if (array2d[1][array2d.lastIndex] == "X") lastFirstCorner++
+        if (array2d[1][array2d.lastIndex] == "X") lastFirstCorner++  //work pause here
         if (array2d[1][array2d.lastIndex - 1] =="X") lastFirstCorner++
         if (lastFirstCorner > 0 )array2d.first()[array2d.lastIndex] = "$lastFirstCorner"
         break
