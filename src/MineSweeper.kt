@@ -76,11 +76,11 @@ fun checkCorners(array2d: Array<Array<String>>) {
         break
     }
     // Last Last Corner of Grid
-    while (array2d.first()[array2d.lastIndex] != "X") {
-        if (array2d.first()[array2d.lastIndex - 1] == "X") firstLastCorner++
-        if (array2d[1][array2d.lastIndex] == "X") firstLastCorner++
-        if (array2d[1][array2d.lastIndex - 1] == "X") firstLastCorner++
-        if (firstLastCorner > 0) array2d.first()[array2d.lastIndex] = "$firstLastCorner"
+    while (array2d.last()[array2d.lastIndex] != "X") {
+        if (array2d.last()[array2d.lastIndex - 1] == "X") lastCorner++
+        if (array2d[array2d.lastIndex -1][array2d.lastIndex] == "X") lastCorner++
+        if (array2d[array2d.lastIndex - 1][array2d.lastIndex - 1] == "X") lastCorner++
+        if (lastCorner > 0) array2d.last()[array2d.lastIndex] = "$lastCorner"
         break
     }
 }
