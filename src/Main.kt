@@ -1,4 +1,4 @@
 fun main(){
-    val number = 3
-    println(number.toChar())
+    val string = String.format("%s %s", "Locale", "Updated")
+    println(string)
 }
