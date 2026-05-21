@@ -1,4 +1,7 @@
-fun main(){
-    val string = String.format("%s %s", "Locale", "Updated")
-    println(string)
+fun main() {
+
+    for (n in 1..10) {
+        println("%2\$${n}s is %1\$${n}s".format( "Master", "Ayush"))
+    }
+
 }
