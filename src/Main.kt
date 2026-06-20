@@ -1,12 +1,12 @@
-fun main(){
-    val regex = """(?<city>[A-Za-z\s]+),\s(?<state>[A-Z]{2}):\s(?<areaCode>[0-9]{5})""".toRegex()
-    val input = "Coordinates: Madrid, SP: 28080"
+fun main() {
+    val email = "ayush.gupta@gmail.com"
+    println(parsingNickname(email))
+}
 
-    val match = regex.find(input)!!
-    println(match.groups["city"]?.value)
-// Madrid
-    println(match.groups["state"]?.value)
-// SP
-    println(match.groups["areaCode"]?.value)
-// 28080
+fun parsingNickname(emailString: String): String {
+    val symbolsForNickname = Regex("[._]") // fix this condition
+    val nicknameString = emailString.split("@").first()// fix this condition
+    val (firstName, lastName) = nicknameString.split(symbolsForNickname)
+    val nickname = "$firstName $lastName"
+    return nickname
 }
