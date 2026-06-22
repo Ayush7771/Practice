@@ -1,8 +1,6 @@
-fun main(){
-    val sb = StringBuilder("Ayush")
-    val sb2 = StringBuilder(sb)
+fun main() {
+    val a = StringBuilder()
+    a.append("Ayush Gupta")
 
-    sb2.append(" Gupta")
-    println(sb2)
-
+    println(a.capacity())
 }
