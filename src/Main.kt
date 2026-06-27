@@ -1,23 +1,45 @@
-fun main(){
-    val regex = "\\d+(\\.\\d+)?".toRegex()
-    val input = "The charger price is $10.99 and the headphone price $15.49 is on sale."
+fun main() {
+    val a = 20
+    val b = 10
+    val c = 35
 
-    val output = StringBuilder()
-    var lastIndex = 0
-    var result = regex.find(input)
+    val dubai = City("dubai")
+    dubai.temperature = a
 
-    while (result != null){
-        output.append(input.substring(lastIndex, result.range.first))
+    val moscow = City("moscow")
+    moscow.temperature = b
 
-        val amount = result.value.toDouble() * 1.1
+    val hanoi = City("hanoi")
+    hanoi.temperature = c
+    printColdestCity(dubai, moscow, hanoi)
+}
 
-        output.append("%.2f".format(amount))
+// Do not change the constructor
+class City(val name: String) {
+    // Do not change the property name "temperature"
+    var temperature: Int = 0
+        set(value) {
+            field = if (value !in -97..57) defaultTemp(name) else value
+        }
 
-        lastIndex = result.range.last + 1
-
-        result = result.next()
+    fun defaultTemp(name: String): Int {
+        return when (name) {
+            "dubai" -> 30
+            "moscow" -> 5
+            "hanoi" -> 20
+            else -> 0
+        }
     }
-    output.append(input.substring(lastIndex))
+}
 
-    println(output)
+fun printColdestCity(dubai: City, moscow: City, hanoi: City) {
+    // Implement the comparison logic here
+    val lowestTemp = listOf<Int>(dubai.temperature, moscow.temperature, hanoi.temperature).min()
+
+    val result = if (dubai.temperature == lowestTemp && moscow.temperature == lowestTemp
+        || hanoi.temperature == lowestTemp && moscow.temperature == lowestTemp
+        || hanoi.temperature == dubai.temperature
+    ) "neither" else ""
+
+    println(result)
 }
