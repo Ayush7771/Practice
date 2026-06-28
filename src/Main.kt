@@ -1,45 +1,20 @@
 fun main() {
-    val a = 20
-    val b = 10
-    val c = 35
+    val regex = """(\d{4})-(\d{2})-(\d{2})""".toRegex()
+    val input = readln() //The event will happen on 2024-04-12.
 
-    val dubai = City("dubai")
-    dubai.temperature = a
+    val matchResult = regex.find(input)
 
-    val moscow = City("moscow")
-    moscow.temperature = b
-
-    val hanoi = City("hanoi")
-    hanoi.temperature = c
-    printColdestCity(dubai, moscow, hanoi)
+    printGroups(matchResult)
 }
 
-// Do not change the constructor
-class City(val name: String) {
-    // Do not change the property name "temperature"
-    var temperature: Int = 0
-        set(value) {
-            field = if (value !in -97..57) defaultTemp(name) else value
-        }
+fun printGroups(matchResult: MatchResult?) {
+    println(
+        """
+        Full match: ${matchResult?.groupValues[0]}
+        Year: ${matchResult?.groupValues[1]} 
+        Month: ${matchResult?.groupValues[2]}
+        Day: ${matchResult?.groupValues[3]}
+        """.trimIndent()
+    )
 
-    fun defaultTemp(name: String): Int {
-        return when (name) {
-            "dubai" -> 30
-            "moscow" -> 5
-            "hanoi" -> 20
-            else -> 0
-        }
-    }
-}
-
-fun printColdestCity(dubai: City, moscow: City, hanoi: City) {
-    // Implement the comparison logic here
-    val lowestTemp = listOf<Int>(dubai.temperature, moscow.temperature, hanoi.temperature).min()
-
-    val result = if (dubai.temperature == lowestTemp && moscow.temperature == lowestTemp
-        || hanoi.temperature == lowestTemp && moscow.temperature == lowestTemp
-        || hanoi.temperature == dubai.temperature
-    ) "neither" else ""
-
-    println(result)
 }
