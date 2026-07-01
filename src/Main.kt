@@ -1,11 +1,9 @@
 fun main() {
-    val text = readln()
-    // write your code here
-    val regex = "([A-Z]+[a-z]*)(\\s[A-Z]+[a-z]*)?".toRegex()
-    val result = regex.findAll(text)
+    val durationIndays = readln().toInt()
+    val totalFoodCost = readln().toInt() * durationIndays
+    val flightCost = readln().toInt() * 2
+    val hotelCost = readln().toInt() * (durationIndays - 1)
 
-    for (i in result){
-        println(i.value)
-    }
+    println(totalFoodCost + flightCost + hotelCost)
 
 }
