@@ -1,9 +1,6 @@
-fun main() {
-    val durationIndays = readln().toInt()
-    val totalFoodCost = readln().toInt() * durationIndays
-    val flightCost = readln().toInt() * 2
-    val hotelCost = readln().toInt() * (durationIndays - 1)
+fun main(){
+    val input = readln()
+    val regex = Regex("[A-Z]+[a-z]+[0-9]+")
 
-    println(totalFoodCost + flightCost + hotelCost)
-
+    println(if(regex.matches(input)) "Password saved" else "Password is too simple")
 }
