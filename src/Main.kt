@@ -1,28 +1,15 @@
 fun main() {
+    val set = setOf(12, 34, 235, 2343, 1, 3, 4564, 23, 5, 6, 123545, 464)
+
+    // Write your code here
     val input = readln()
-    val splitedString = StringBuilder()
+    val inputNum = readln().toInt()
 
-    for (i in input.indices) {
-        if (i == input.lastIndex) {
-            splitedString.append(input[i])
-            break
+    println(
+        when(input){
+            "first" -> set.firstOrNull{ it > inputNum}
+            "last" -> set.lastOrNull { it > inputNum }
+            else -> null
         }
-
-        if (input[i] == input[i + 1]) {
-            splitedString.append(input[i])
-        } else {
-            splitedString.append(input[i])
-            splitedString.append("-")
-        }
-
-    }
-
-    val list = splitedString.split("-").toMutableList()
-    val output = StringBuilder()
-    for (i in list) {
-        output.append(i.first())
-        output.append(i.length)
-    }
-
-    println(output)
+    )
 }
