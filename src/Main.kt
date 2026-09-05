@@ -1,16 +1,14 @@
-fun main() {
-    val a = Child()
-    a.printValue()
+fun main(){
+    val a = Size()
 }
 
-internal open class Parent {
-    protected val protectedValue = 42
-    val privateValue = 20
+open class Size(){
+    protected open var age = 10
+
 }
 
-private class Child : Parent() {
-    fun printValue() {
-        println(protectedValue)
-        println(privateValue)
+class square : Size(){
+    fun printx(){
+        println(age)
     }
 }
