@@ -1,31 +1,17 @@
 fun main(){
-    val account = SavingsAccount()
-
-    println(account.bankName)
-    println(account.balance) //Not accessible because of protected visibility only child classes can access
-    println(account.branch)
-    account.changePin() //Not accessible because of private visibility, private member is restricted within declared class
-
+    val theDarkKnight = Comics(2, "Christian Bale", 1)
+    println(theDarkKnight.getInfo())
+    println(theDarkKnight.getIndiancost())
 }
 
-open class Account {
-
-    public val bankName = "SBI"
-    private val pin = 1234
-    protected var balance = 5000
-    internal val branch = "Delhi"
-
-    private fun changePin() {
-        println("PIN changed")
+open class Book(val pages : Int, val author : String, val cost : Int){
+    fun getInfo() : String{
+        return "$pages $author $$cost"
     }
 }
 
-class SavingsAccount : Account() {
-
-    fun test() {
-        println(bankName)
-        println(pin) //Not accessible because of private
-        println(balance)
-        println(branch)
+class Comics(pages: Int, author: String, cost: Int) : Book(pages, author, cost){
+    fun getIndiancost() : Int{
+        return cost * 95
     }
 }
