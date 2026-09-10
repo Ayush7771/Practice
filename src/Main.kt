@@ -1,19 +1,14 @@
-open class Vehicle {
-    open fun speed(age : Int) {
-        println("The vehicle has the speed")
-    }
-
-    fun speed(ayush : String){
-
-    }
+fun main(){
+    val dog = Dog()
+    dog.makeSound()
 }
 
-class Car : Vehicle() {
-    override fun speed(age: Int) {
-
-    }
-    fun speed(ready: Double){
-
-    }
+interface Animal{
+    fun makeSound()
 }
 
+class Dog : Animal{
+    override fun makeSound() {
+        println("Bark")
+    }
+}
