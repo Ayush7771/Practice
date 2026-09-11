@@ -1,14 +1,20 @@
-fun main(){
-    val dog = Dog()
-    dog.makeSound()
+class MyAnimalClass : Animal{
+    override val numberOfLimbs: Int = 0
+    override fun move() {}
+
+    fun ayush(){
+
+    }
+    override fun communicate(): String {
+        return ""
+    }
+
 }
 
 interface Animal{
-    fun makeSound()
-}
+    val numberOfLimbs : Int
 
-class Dog : Animal{
-    override fun makeSound() {
-        println("Bark")
-    }
+    fun move()
+
+    fun communicate() : String
 }
