@@ -1,20 +1,18 @@
-class MyAnimalClass : Animal{
-    override val numberOfLimbs: Int = 0
-    override fun move() {}
+abstract class Animal{
+    abstract fun move()
+    abstract fun makeSound()
 
-    fun ayush(){
-
-    }
-    override fun communicate(): String {
-        return ""
-    }
-
+    fun eat() = false
+    fun sleeping() = false
 }
 
-interface Animal{
-    val numberOfLimbs : Int
+class Cat : Animal() {
+    override fun move() {
+        println("Walk")
+    }
 
-    fun move()
+    override fun makeSound() {
+        println("meow")
+    }
 
-    fun communicate() : String
 }
