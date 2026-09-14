@@ -1,18 +1,19 @@
 abstract class Animal{
-    abstract fun move()
     abstract fun makeSound()
 
-    fun eat() = false
-    fun sleeping() = false
+    fun sleep(){
+        println("Sleeping")
+    }
 }
 
-class Cat : Animal() {
-    override fun move() {
-        println("Walk")
-    }
-
+class Dog : Animal(){
     override fun makeSound() {
-        println("meow")
+        println("Woof")
     }
+}
 
+fun main(){
+    val dog = Dog()
+    dog.makeSound()
+    dog.sleep()
 }
