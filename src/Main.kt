@@ -1,19 +1,30 @@
-abstract class Animal{
-    abstract fun makeSound()
+class BankAccount(
+    val accountNumber : String,
+    val ownerName: String,
+    private var balance : Double
+){
 
-    fun sleep(){
-        println("Sleeping")
+    fun deposit(amount : Double) : Boolean{
+        if (amount > 0.0){
+            balance += amount
+            return true
+        } else {
+            return false
+        }
     }
-}
 
-class Dog : Animal(){
-    override fun makeSound() {
-        println("Woof")
+    fun withdraw(amount : Double): Boolean {
+        if (amount <= balance && amount > 0.0){
+            balance -= amount
+            return true
+        } else {
+            return false
+        }
     }
-}
 
-fun main(){
-    val dog = Dog()
-    dog.makeSound()
-    dog.sleep()
+    fun getBalance() : Double = balance
+
+    fun displayInfo(){
+        println("Account: $accountNumber\nOwner: $ownerName\nBalance: $balance")
+    }
 }
