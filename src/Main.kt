@@ -1,30 +1,15 @@
-class BankAccount(
-    val accountNumber : String,
-    val ownerName: String,
-    private var balance : Double
-){
+fun main() {
+    val zoo = Animal.getMethod()
+    val foo = Animal.getMethod()
 
-    fun deposit(amount : Double) : Boolean{
-        if (amount > 0.0){
-            balance += amount
-            return true
-        } else {
-            return false
-        }
-    }
+    println(zoo === foo)
 
-    fun withdraw(amount : Double): Boolean {
-        if (amount <= balance && amount > 0.0){
-            balance -= amount
-            return true
-        } else {
-            return false
-        }
-    }
+}
 
-    fun getBalance() : Double = balance
-
-    fun displayInfo(){
-        println("Account: $accountNumber\nOwner: $ownerName\nBalance: $balance")
+object Animal {
+    var instance: Animal? = null
+    fun getMethod(): Animal? {
+        if (instance == null) instance = Animal
+        return instance
     }
 }
