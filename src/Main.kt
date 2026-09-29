@@ -1,21 +1,11 @@
-data class Client(
-    val name: String,
-    val age: Int,
-    val gender: String
-)
+fun main(){
+    val pair = Pair("Ayush", 22)
+    val pair2 = "Khushi" to 20
 
-fun main() {
-    val bob = Client("Bob", 29, "Male")
-    val john = bob.copy(name = "John")
+    val triple = Triple("ayush", 22, "Male")
 
-    val (name1, age1, gender1) = bob
-    val (name2, age2, gender2) = john
 
-    println(bob == john)
-    println(name1)
-    println(age1)
-    println(gender1)
-    println(name2)
-    println(age2)
-    println(gender2)
+    println(pair)
+    println(pair2.component2())
 }
+
