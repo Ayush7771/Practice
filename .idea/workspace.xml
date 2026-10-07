@@ -27,12 +27,12 @@
     &quot;assignee&quot;: &quot;Ayush7771&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ayush7771/Practice.git&quot;,
-    &quot;accountId&quot;: &quot;5d70b1ef-2797-4455-bd5a-5954497284b1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ayush7771/Practice",
+    "accountId": "27371053-ac9e-4094-8efe-b3152688e028"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
