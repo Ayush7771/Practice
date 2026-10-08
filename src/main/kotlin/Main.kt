@@ -1,13 +1,10 @@
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
-import kotlinx.datetime.plus
-import java.time.ZoneId
-import kotlin.time.*
-import kotlin.time.Duration.Companion.hours
-import kotlin.time.Duration.Companion.minutes
+import kotlinx.datetime.todayIn
+import kotlin.time.Clock
 
 fun main(){
-    val instant : Instant = Instant.parse("2023-01-02T22:35:01+01:00")
+    val dateTime: LocalDate = Clock.System.todayIn(TimeZone.of("UTC-5"))
 
-    val timeZone  = TimeZone.of("Asia/Kolkata")
-    println(timeZone)
 }
