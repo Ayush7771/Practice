@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
 }
 
 kotlin {

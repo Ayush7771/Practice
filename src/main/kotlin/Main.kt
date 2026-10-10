@@ -1,10 +1,24 @@
-import kotlinx.datetime.LocalDate
-import kotlinx.datetime.LocalDateTime
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.todayIn
-import kotlin.time.Clock
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
-fun main(){
-    val dateTime: LocalDate = Clock.System.todayIn(TimeZone.of("UTC-5"))
+fun main() {
+    val human = Human("Ayush", 22, listOf("Mangal", "Khushi", "Anushka"))
+    val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    val adapter = moshi.adapter(Human::class.java)
+
+    val json = """
+        {
+        "name": "Ayush Gupta",
+        "age" : "20",
+        "friends" : ["Ayush"]
+        }
+    """.trimIndent()
+    println(adapter?.fromJson(json)?.age)
 
 }
+
+data class Human (
+    var name : String,
+    var age : Int,
+    var friends : List<String>
+)
