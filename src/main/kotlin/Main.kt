@@ -1,20 +1,14 @@
 fun main(){
-    val result = grade(true)
-    println(
-        result(9.0)
-    )
+    println(applyAndSum(3,4, ::same))
+    println(applyAndSum(2, 3, ::square))
+    println(applyAndSum(5,10,::triple))
 }
 
-fun getGrade(x : Double) : Double = x
-fun getPenaltyGrade(x : Double) : Double = x - 1
+fun applyAndSum(a : Int, b : Int, transform : (Int) -> Int) : Int{
 
-
-fun grade(isCheat : Boolean) : (Double) -> Double{
-
-    return if (isCheat){
-        ::getPenaltyGrade
-    } else {
-        ::getGrade
-    }
-
+    return transform(a) + transform(b)
 }
+
+fun same(x : Int) = x
+fun square(x : Int) = x * x
+fun triple(x : Int) = 3 * x
