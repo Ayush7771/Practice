@@ -1,14 +1,8 @@
 fun main(){
-    println(applyAndSum(3,4, ::same))
-    println(applyAndSum(2, 3, ::square))
-    println(applyAndSum(5,10,::triple))
+    val text = "Ayush. Gupta. is. the. King. of. Kotlin."
+    val textWithoutDot = text.filter ( ::isNotDot )
+    println(textWithoutDot)
 }
 
-fun applyAndSum(a : Int, b : Int, transform : (Int) -> Int) : Int{
+fun isNotDot(c : Char) : Boolean = c != '.'
 
-    return transform(a) + transform(b)
-}
-
-fun same(x : Int) = x
-fun square(x : Int) = x * x
-fun triple(x : Int) = 3 * x
