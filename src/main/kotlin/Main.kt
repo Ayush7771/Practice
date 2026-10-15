@@ -1,8 +1,9 @@
+import kotlin.math.pow
+
 fun main(){
-    val text = "Ayush. Gupta. is. the. King. of. Kotlin."
-    val textWithoutDot = text.filter ( ::isNotDot )
-    println(textWithoutDot)
+    val anonymousFunction = fun (a : Int, b : Int) = a * b
+    val lambdaExpression = {a : Int, b : Int -> a * b}
+
+    println(anonymousFunction(10,20))
+    println(lambdaExpression(10,20))
 }
-
-fun isNotDot(c : Char) : Boolean = c != '.'
-
