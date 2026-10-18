@@ -1,9 +1,13 @@
-import kotlin.math.pow
+fun main() {
 
-fun main(){
-    val anonymousFunction = fun (a : Int, b : Int) = a * b
-    val lambdaExpression = {a : Int, b : Int -> a * b}
+    val result: (Int, Int) -> Int = compose(5, 7)
 
-    println(anonymousFunction(10,20))
-    println(lambdaExpression(10,20))
+    println(result(10, 12))
+
+}
+
+fun compose(a: Int, b: Int): (Int, Int) -> Int {
+    return { c, d ->
+        c * d * a + b
+    }
 }
