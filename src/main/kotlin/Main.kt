@@ -1,13 +1,12 @@
-fun main() {
+import kotlin.properties.Delegates
 
-    val result: (Int, Int) -> Int = compose(5, 7)
+class Person {
 
-    println(result(10, 12))
+    var age: Int by Delegates.observable(13) { prop, oldValue, newValue ->
+        println(newValue >= 18)
 
-}
-
-fun compose(a: Int, b: Int): (Int, Int) -> Int {
-    return { c, d ->
-        c * d * a + b
     }
+
+    var isAdult: Boolean = age >= 18
+        private set
 }
