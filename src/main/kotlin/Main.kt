@@ -1,12 +1,11 @@
-import kotlin.properties.Delegates
+fun main() {
+    val personGenerator = ::Person
+    val ayush = personGenerator("Ayush")
+    ayush.printName()
+}
 
-class Person {
-
-    var age: Int by Delegates.observable(13) { prop, oldValue, newValue ->
-        println(newValue >= 18)
-
+class Person(val name : String){
+    fun printName(){
+        println(name)
     }
-
-    var isAdult: Boolean = age >= 18
-        private set
 }
