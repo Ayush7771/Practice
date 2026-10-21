@@ -1,11 +1,9 @@
-fun main() {
-    val personGenerator = ::Person
-    val ayush = personGenerator("Ayush")
-    ayush.printName()
+fun square(x: Int, filter : (Int) -> Int) {
+    println(filter(x))
 }
 
-class Person(val name : String){
-    fun printName(){
-        println(name)
-    }
+fun squareCalculation (x : Int) : Int = x * x
+
+fun main(){
+    square(10, ::squareCalculation)
 }
