@@ -1,35 +1,13 @@
-import java.util.Scanner
-
-fun main(){
-    val scanner = Scanner(System.`in`)
-
-    val list = mutableMapOf<Int, Int>()
-    var rejectedReports = 0
-
-    var lastAcceptedTime = 0
-    var lastAcceptedHouse = 0
-
-    while (scanner.hasNextInt()){
-        val time = scanner.nextInt()
-        val house = scanner.nextInt()
-        list[time] = house
-
-        if (list.size == 1){
-            lastAcceptedTime = time
-            lastAcceptedHouse = house
-            continue
+fun main() {
+    println(
+        Musician(
+            name = "Ayush Gupta",
+            prof = "Android Developer",
+            id = 1
+        ).apply {
+            this.prof = "Kotlin Developer"
         }
-
-        val timeAvailable = kotlin.math.abs(time - lastAcceptedTime)
-        val houseDistance = kotlin.math.abs(house - lastAcceptedHouse)
-
-        if (timeAvailable < houseDistance){
-            rejectedReports++
-        } else {
-            lastAcceptedTime = time
-            lastAcceptedHouse = house
-        }
-    }
-
-    println(rejectedReports)
+    )
 }
+
+data class Musician(var name: String, var prof: String, var id: Int)
