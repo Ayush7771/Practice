@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1408eab8-fa48-4a29-a420-b952a92a3902" name="Changes" comment="" />
+    <list default="true" id="1408eab8-fa48-4a29-a420-b952a92a3902" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,12 +27,12 @@
     &quot;assignee&quot;: &quot;Ayush7771&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ayush7771/Practice.git",
-    "accountId": "5d70b1ef-2797-4455-bd5a-5954497284b1"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ayush7771/Practice.git&quot;,
+    &quot;accountId&quot;: &quot;5d70b1ef-2797-4455-bd5a-5954497284b1&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$PROJECT_DIR$/../../Gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.20/2f8288ecb75d737df852f0044f88787b4f739e27/kotlin-stdlib-2.4.20-sources.jar!/commonMain/kotlin/time/Clock.kt" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$PROJECT_DIR$/../../Gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.4.20/2f8288ecb75d737df852f0044f88787b4f739e27/kotlin-stdlib-2.4.20-sources.jar!/commonMain/kotlin/time/Instant.kt" root0="FORCE_HIGHLIGHTING" />
