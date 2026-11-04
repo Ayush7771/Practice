@@ -1,13 +1,15 @@
-fun main(){
-    val result = 10.opp({this * 10})
+import kotlin.math.pow
 
-    println(result)
+fun main() {
+    val input = readln()
+    val entry = readln().toInt()
+    when (input) {
+        "amount" -> compoundingCalculator(amount = entry)
+        "percent" -> compoundingCalculator(percent = entry)
+        "years" -> compoundingCalculator(years = entry)
+    }
 }
 
-fun Int.opp(f : Int.() -> Int) : Int{
-    return  f()
-}
-
-fun myString( a : StringBuilder.()-> Unit) : String{
-    return StringBuilder().apply(a).toString()
+fun compoundingCalculator(amount : Int = 1000, percent : Int = 5, years : Int = 10 ){
+    println((amount * ((1 + percent / 100.0).pow(years))).toInt())
 }
