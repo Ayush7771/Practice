@@ -1,16 +1,13 @@
 fun main(){
-    println(generate("half")(10))
+    "Ayush".greet()
+    println(10.double())
+
 }
 
-fun identity(agr : Int) : Int = agr
-fun half(agr : Int) : Int = agr / 2
-fun zero(agr : Int) : Int = 0
+fun String.greet(){
+    println("Hello $this")
+}
 
-fun generate(functionName: String): (Int) -> Int {
-
-    return when (functionName){
-        "identity" -> ::identity
-        "half" -> ::half
-        else -> ::zero
-    }
+fun Int.double() : Int{
+    return (this * 2)
 }
