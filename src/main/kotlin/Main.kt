@@ -1,13 +1,9 @@
-fun main(){
-    "Ayush".greet()
-    println(10.double())
-
+fun main() {
+    10.also {
+        println(it)
+    }.action { this.times(5) }.also {
+        println(it)
+    }
 }
 
-fun String.greet(){
-    println("Hello $this")
-}
-
-fun Int.double() : Int{
-    return (this * 2)
-}
+fun Int.action(args: Int.() -> Int): Int = args()
