@@ -1,9 +1,22 @@
+class Pizza{
+    fun addToppings(){
+        println("Toppings added...")
+    }
+
+    fun addCheese(){
+        println("Cheese added...")
+    }
+
+}
+
 fun main() {
-    10.also {
-        println(it)
-    }.action { this.times(5) }.also {
-        println(it)
+    makePizza {
+        addCheese()
+        addToppings()
     }
 }
 
-fun Int.action(args: Int.() -> Int): Int = args()
+fun makePizza(block : Pizza.() -> Unit): Pizza{
+    return Pizza().apply(block)
+
+}
